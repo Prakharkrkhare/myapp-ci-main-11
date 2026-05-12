@@ -12,6 +12,7 @@ steps:
       copy target\*.jar deployed\
       echo Deployment successful!
 
+cmd -   Java -jar target/(filename.jar)
 
 
 
