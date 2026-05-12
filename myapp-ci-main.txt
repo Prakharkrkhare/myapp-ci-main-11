@@ -1,0 +1,33 @@
+trigger:
+  - main
+
+pool:
+  name: mylocalpool
+
+steps:
+  - script: mvn package
+
+  - script: |
+      mkdir deployed
+      copy target\*.jar deployed\
+      echo Deployment successful!
+
+
+
+
+trigger:
+  - main
+
+pool:
+  name: mylocalpool
+
+steps:
+  - script: mvn package
+
+  - script: |
+      mkdir deployed
+      copy target\*.jar deployed\
+      echo Deployment successful!
+
+  - script: java -jar deployed\*.jar
+    displayName: 'Run Application'
