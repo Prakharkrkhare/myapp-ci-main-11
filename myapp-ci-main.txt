@@ -31,3 +31,19 @@ steps:
 
   - script: java -jar deployed\*.jar
     displayName: 'Run Application'
+
+
+<build>
+  <plugins>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-jar-plugin</artifactId>
+  <version>3.2.2</version>
+  <configuration>
+    <archive>
+      <manifest>
+        <mainClass>com.mvit.App</mainClass>
+      </manifest>
+    </archive>
+  </configuration>
+  </plugin>
+</build>
